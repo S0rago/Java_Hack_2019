@@ -3,9 +3,9 @@ package com.firsttry.firsttry
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CountDownTimer
 import kotlinx.android.synthetic.main.activity_recover.*
-import android.widget.Toast
+import android.util.Log
+import java.util.*
 
 class RecoverActivity : AppCompatActivity() {
 
@@ -15,12 +15,18 @@ class RecoverActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+
         acceptButton.setOnClickListener {
             val cardNum = cardNumText.text.toString()
-            val cardDate = cardDateText.text.toString()
+            var (cardMonth, cardYear) = cardDateText.text.toString().split("/")
             val cardCVC = cvcText.text.toString()
+            val curYear = Calendar.getInstance().get(Calendar.YEAR)
+            when (cardYear.length){
+                2-> cardYear = ("20" + cardYear)
+                else -> cardYear
+            }
 
-            if (cardNum.length == 12 && cardCVC.length == 3) {
+            if (cardNum.length == 12 && cardCVC.length == 3 && cardMonth.toInt() in 0..12 && cardYear.toInt() in curYear-3..curYear+3) {
                 val intent = Intent(this, MainActivity::class.java)
                 finish()
                 startActivity(intent)
