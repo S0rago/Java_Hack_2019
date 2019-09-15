@@ -13,6 +13,9 @@ class VerifyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verify)
+
+        supportActionBar?.hide()
+
         val codeList = listOf("1234", "1357", "2468")
         codeVerButton.setOnClickListener {
             val code = smsCodeText.text.toString()

@@ -13,32 +13,18 @@ class RecoverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recover)
 
-        acceptButton.setOnClickListener{
+        supportActionBar?.hide()
+
+        acceptButton.setOnClickListener {
             val cardNum = cardNumText.text.toString()
             val cardDate = cardDateText.text.toString()
             val cardCVC = cvcText.text.toString()
 
-            Toast.makeText(this, cardDate, Toast.LENGTH_SHORT)
-                .show()
             if (cardNum.length == 12 && cardCVC.length == 3) {
                 val intent = Intent(this, MainActivity::class.java)
                 finish()
                 startActivity(intent)
             }
-        }
-
-        resendSMSText.setOnClickListener {
-            resendSMSText.isEnabled = false
-            val timer = object: CountDownTimer(60000, 1000) {
-                override fun onTick(millisUntilFinished: Long) {
-                    resendSMSText.text = "Повторно можно отправить через ${millisUntilFinished/1000}"
-                }
-                override fun onFinish() {
-                    resendSMSText.isEnabled = true
-                    resendSMSText.text = "Оптравить смс повторно"
-                }
-            }
-            timer.start()
         }
     }
 }

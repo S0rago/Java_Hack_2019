@@ -28,6 +28,8 @@ class MainMenuActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        supportActionBar?.hide()
     }
 
     override fun onPause() {

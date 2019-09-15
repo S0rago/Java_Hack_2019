@@ -6,13 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".RecoverActivity">
 
+    <View
+        android:id="@+id/raiff_logo"
+        android:layout_width="159.72dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/raiff_logo"
+        android:foreground="@drawable/raiff_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/cardNumText"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="150dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="96dp"
+        android:background="@android:drawable/editbox_background_normal"
         android:ems="10"
         android:hint="Номер карты"
         android:inputType="number"
@@ -24,14 +38,13 @@
         android:id="@+id/cvcText"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:background="@android:drawable/editbox_background_normal"
         android:ems="10"
         android:hint="CVC"
         android:inputType="number"
         android:maxLength="3"
-        app:layout_constraintEnd_toEndOf="@+id/cardNumText"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cardDateText"
         app:layout_constraintTop_toBottomOf="@+id/cardNumText" />
 
@@ -43,28 +56,33 @@
         android:ems="10"
         android:hint="ММ/ГГ"
         android:inputType="date"
+        android:background="@android:drawable/editbox_background_normal"
         app:layout_constraintStart_toStartOf="@+id/cardNumText"
         app:layout_constraintTop_toBottomOf="@+id/cardNumText" />
 
     <Button
         android:id="@+id/acceptButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_width="219dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-light"
         android:text="Подтвердить"
-        android:textAllCaps="false"
+        android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="@+id/cardNumText"
         app:layout_constraintStart_toStartOf="@+id/cardNumText"
-        app:layout_constraintTop_toBottomOf="@+id/cardNumText" />
+        app:layout_constraintTop_toBottomOf="@+id/cvcText" />
 
-    <TextView
-        android:id="@+id/resendSMSText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Оптравить смс повторно"
-        app:layout_constraintEnd_toEndOf="@+id/acceptButton"
-        app:layout_constraintStart_toStartOf="@+id/acceptButton"
-        app:layout_constraintTop_toBottomOf="@+id/acceptButton" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="150dp"
+        android:text="Скан"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/cardNumText"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,36 @@
     android:background="@android:color/white"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/raiff_logo"
+        android:layout_width="159.72dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/raiff_logo"
+        android:foreground="@drawable/raiff_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enterTextView"
+        android:layout_width="243dp"
+        android:layout_height="46dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal|top"
+        android:text="Вход или регистрация"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/usernameField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/passwordField"
         android:layout_width="0dp"
@@ -22,10 +52,13 @@
 
     <Button
         android:id="@+id/signInButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="219dp"
+        android:layout_height="49dp"
         android:layout_marginTop="16dp"
-        android:text="Вход"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-light"
+        android:text="Войти"
+        android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="@+id/passwordField"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/passwordField"
@@ -36,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Сброс пароля"
+        android:text="Забыли пароль ?"
         app:layout_constraintEnd_toEndOf="@+id/signInButton"
         app:layout_constraintStart_toStartOf="@+id/signInButton"
         app:layout_constraintTop_toBottomOf="@+id/signInButton" />

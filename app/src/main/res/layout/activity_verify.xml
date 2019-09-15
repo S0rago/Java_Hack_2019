@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".VerifyActivity">
 
+    <View
+        android:id="@+id/raiff_logo"
+        android:layout_width="159.72dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/raiff_logo"
+        android:foreground="@drawable/raiff_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/smsCodeText"
         android:layout_width="0dp"
@@ -23,11 +36,13 @@
 
     <Button
         android:id="@+id/codeVerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="219dp"
+        android:layout_height="49dp"
         android:layout_marginTop="16dp"
-        android:text="Отправить"
-        android:textAllCaps="false"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-light"
+        android:text="Войти"
+        android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="@+id/smsCodeText"
         app:layout_constraintStart_toStartOf="@+id/smsCodeText"
         app:layout_constraintTop_toBottomOf="@+id/smsCodeText" />

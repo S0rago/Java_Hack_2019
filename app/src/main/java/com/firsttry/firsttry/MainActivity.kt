@@ -15,19 +15,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.hide()
+
         signInButton.setOnClickListener {
             val username = usernameField.text.toString()
             val password = passwordField.text.toString()
-
-            Log.d("USER", "$username")
-            Log.d("PASS", "$password")
 
             if (loginPairList.contains(username to password)){
                 val intent = Intent(this, VerifyActivity::class.java)
                 finish()
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Неверно введен логин/пароль $username $password", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Неверно введен логин/пароль", Toast.LENGTH_SHORT)
                     .show()
             }
         }
