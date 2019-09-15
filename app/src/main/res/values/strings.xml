@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Райффайзен Банк</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_home">Главная</string>
+    <string name="title_account">Лич. Каб.</string>
+    <string name="title_history">История</string>
+    <string name="title_analytics">Ананлитика</string>
+    <string name="title_find_work">Найти работу</string>
+</resources>
